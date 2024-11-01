@@ -1,0 +1,229 @@
+main {
+  margin-top: 0;
+}
+.content {
+  background: linear-gradient(
+    to bottom,
+    transparent 20%,
+    #f2e9e0 20%,
+    #f2e9e0 81%,
+    transparent 81%
+  );
+  @media screen and (min-width: 768px) {
+    padding: 0 110px;
+  }
+  margin-bottom: 40px;
+}
+.content img {
+  max-width: 100%;
+}
+.banner {
+  margin-top: 100px;
+  position: relative;
+}
+.banner > div {
+  position: relative;
+}
+.catalog {
+  position: relative;
+}
+.catalog a {
+  position: relative;
+  display: block;
+}
+.catalog a:hover span {
+  text-decoration: underline;
+}
+.banner .section {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    left: 145px;
+    bottom: 230px;
+    color: #fff;
+    width: 300px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .banner .section.solis {
+    left: 67%;
+  }
+  .banner .image-wrapper-logo.solis {
+    left: 67%
+  }
+}
+.banner .image-wrapper-logo {
+  bottom: 0;
+  top: 360px;
+  left: 142px;
+  position: absolute;
+  width: 100%;
+}
+.image-wrapper-logo img {
+  width: 300px;
+}
+@media screen and (max-width: 768px) {
+  .banner .image-wrapper-logo {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    justify-content: center;
+  }
+  .image-wrapper-logo img {
+    width: 180px;
+  }
+}
+.product-name {
+  position: absolute;
+  font-size: 22px;
+  font-weight: 900;
+  left: 25px;
+  letter-spacing: 0.25em;
+  text-align: left;
+  color: #ffffff;
+  text-transform: uppercase;
+  bottom: 20px;
+  z-index: 1;
+}
+span.index-2.product-name {
+  left: 26px;
+  bottom: 30px;
+  @media screen and (min-width: 768px) {
+    left: 0;
+  }
+}
+span.index-4.product-name {
+  left: 20px;
+  bottom: 10px;
+  @media screen and (min-width: 768px) {
+    left: 0;
+    bottom: 40px;
+  }
+}
+[class^="product-container"] {
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 0;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}
+[class^="product-container"] img {
+  width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+.catalog .product-container-2 {
+  margin: 35px -40px;
+  @media screen and (min-width: 768px) {
+    max-width: 1320px;
+    margin: 0 -49px 0 -49px;
+  }
+}
+.catalog .product-container-2 .column-0 {
+  max-width: 100%;
+  @media screen and (min-width: 768px) {
+    max-width: calc(60% - 20px);
+  }
+}
+.catalog .product-container-2 .column-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  @media screen and (min-width: 768px) {
+    max-width: calc(40% - 20px);
+  }
+}
+.product-container-2 .column-1 img {
+  object-fit: contain;
+  max-width: calc(90%);
+  margin: 10px 0;
+  @media screen and (min-width: 768px) {
+    margin: initial;
+    max-width: calc(80% - 34px);
+  }
+}
+.product-container-2 .column-1 img:first-child {
+  margin-right: auto;
+}
+.product-container-2 .column-1 img:last-child {
+  margin-left: auto;
+}
+.product-container-4 {
+  margin: 35px -40px;
+  @media screen and (min-width: 768px) {
+    height: 426px;
+    max-width: 1320px;
+    margin: 0 -40px 0 -40px
+  }
+}
+.product-container-4 .column-0 {
+  flex: 0 0 25.5%;
+  max-height: 200px;
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    max-height: initial;
+    overflow: initial;
+  }
+}
+.product-container-4 .column-1 {
+  max-width: calc(75% - 50px) !important;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    margin: 20px auto 0 !important;
+    max-width: calc(85% - 0px) !important;
+  }
+}
+.product-container-5 {
+  margin: 35px -40px;
+  @media screen and (min-width: 768px) {
+    margin: 35px 0;
+  }
+}
+span.index-5.product-name {
+  left: -13px;
+  @media screen and (min-width: 768px) {
+    left: 30px;
+  }
+}
+.product-container-5 img {
+  max-width: fit-content;
+}
+[class^="product-container-"]:not(.product-container-5) [class^="column-"] {
+  max-width: 100%;
+  margin: 10px 0;
+  @media screen and (min-width: 768px) {
+    max-width: calc(50% - 20px);
+    margin: initial;
+  }
+}
+.feature-video-container {
+  margin: 0 -40px;
+  @media screen and (min-width: 768px) {
+    width: 1440px;
+    margin: 35px -110px 0;
+  }
+}
+.feature-video-container video {
+  width: -webkit-fill-available;
+  vertical-align: bottom;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19.12px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+}

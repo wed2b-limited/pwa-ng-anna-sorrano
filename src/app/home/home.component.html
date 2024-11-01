@@ -1,0 +1,48 @@
+<main class="home">
+  <div class="content">
+    <div class="banner">
+      <div class="heading-container">
+        <h1>The Legacy Collection</h1>
+        <a class="call-to-action" [routerLink]="'/collections/solis'" [queryParams]="{ value: brandCollectionId }">View New Collection</a>
+      </div>
+      <div class="video-container">
+        <video [muted]="'muted'" muted loop autoplay [poster]="this.cdnUrl+'brands/anna-sorrano/media/homepage-desktop-video.mp4'" playsinline>
+          <source [src]="this.cdnUrl+'brands/anna-sorrano/media/homepage-desktop-video.mp4'" type="video/mp4">
+                Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <section>
+      <div class="products-container">
+        <h2>Fall In Love</h2>
+        <div class="product-container-collection">
+          <div>
+            <img [src]="this.cdnUrl+'brands/heidi-hudson/media/home-page-image-1.jpg'" alt="Home Page image">
+            <h3 class="product-name">Josephine</h3>
+          </div>
+          <div>
+            <img [src]="this.cdnUrl+'brands/heidi-hudson/media/home-page-image-2.jpg'" alt="Home Page image">
+            <h3 class="product-name">Lidia</h3>
+          </div>
+          <div>
+            <img [src]="this.cdnUrl+'brands/heidi-hudson/media/home-page-image-3.jpg'" alt="Home Page image">
+            <h3 class="product-name">Jaleesa</h3>
+          </div>
+        </div>
+        <a class="call-to-action" [routerLink]="'/collections/solis'" [queryParams]="{ value: brandCollectionId }">View All Collection</a>
+      </div>
+        <div class="read-more-container">
+          <div class="read-more-img-wrapper">
+            <img [src]="this.cdnUrl+'brands/anna-sorrano/media/homepage-read-more-image.jpg'" alt="Read More Image">
+          </div>
+          <div class="read-more-description-wrapper">
+            <p class="description bottom">Anna’s legacy derives from traditional British bridal, taking inspiration from classic construction techniques and royal weddings through the ages.</p>
+            <a class="call-to-action browse-collection" [routerLink]="'/collections'" >Read More</a>
+          </div>
+        </div>
+    </section>
+    <div class="instagram-container">
+      <app-instagram-feed></app-instagram-feed>
+    </div>
+  </div>
+</main>

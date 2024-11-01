@@ -1,0 +1,88 @@
+main.browse {
+  margin-top: 0;
+}
+.content {
+  background: linear-gradient(to bottom, #edf1ef 79%, transparent 50%);
+  margin-bottom: 40px;
+  @media screen and (min-width: 768px) {
+    padding: 0 110px;
+  }
+}
+h2 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 0;
+  letter-spacing: 0.25em;
+  text-align: center;
+  font-family: Avenir, serif;
+  margin-top: 100px;
+  margin-bottom: 55px;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+    margin-top: 135px;
+  }
+}
+h2 span {
+  font-family: Avenir, serif;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+
+}
+.attr-label {
+  display: none;
+}
+.attributes > div {
+  flex: 1 0 50%;
+  padding: 10px; /* change this value to your needs */
+  box-sizing: border-box;
+  position: relative;
+}
+.attributes > div  a > img {
+  max-width: 100%;
+  height: auto;
+
+}
+.attributes > div a {
+  position: relative;
+  display: inline-block;
+}
+.logo {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  justify-content: center;
+}
+.logo img {
+  width: 200px;
+}
+.call-to-action-simple {
+  position: absolute;
+  bottom: 25px;
+  display: inline-block;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21.86px;
+  letter-spacing: 0.25em;
+  color: #ffffff;
+  z-index: 1;
+  text-transform: uppercase;
+  text-decoration: underline;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16.39px;
+    letter-spacing: 0.25em;
+    text-align: center;
+
+  }
+}

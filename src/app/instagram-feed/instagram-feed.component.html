@@ -1,0 +1,21 @@
+<main class="instagram-feed">
+  <div class="content">
+    <h2 class="heading">Our real love stories</h2>
+    <h2>
+      <a target="_blank" href="https://www.instagram.com/heidi_hudson">&#64;annasorranobridal</a>
+    </h2>
+    <div class="instagram-media-container">
+      <ng-container *ngFor="let m of media | async">
+        <a [href]="m.permalink" target="_blank">
+          <img *ngIf="m.media_type !== 'VIDEO'" [src]="m.media_url" [alt]="m.caption">
+          <ng-container *ngIf="m.media_type === 'VIDEO'">
+            <video height="auto" [muted]="'muted'" muted loop autoplay [poster]="m.media_url" playsinline>
+              <source [src]="m.media_url" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </ng-container>
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</main>

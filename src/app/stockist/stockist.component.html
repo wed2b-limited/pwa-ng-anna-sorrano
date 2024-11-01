@@ -1,0 +1,36 @@
+<app-progress-loader></app-progress-loader>
+<main class="stockist">
+  <div class="content">
+    <h1>Find A Store</h1>
+    <p class="blurb">Find your vibe exclusively at wed2b stores.</p>
+<!--    <div class="banner">-->
+<!--      <img [src]="'/stockist-map.png'" width="100%" alt="Map with pins">-->
+<!--    </div>-->
+    <ul class="store-listing" appTrackBy="shop_id" #trackBy="appTrackBy">
+      <ng-container *ngFor="let shop of shop | async; trackBy: trackBy.trackByFn">
+        <li (click)="toggleNode(shop)">
+          <div class="header">
+            <span>{{ shop.name }}</span>
+            <span *ngIf="shop.expanded" class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#524D49"><path d="M240-460v-40h480v40H240Z"/></svg></span>
+            <span *ngIf="!shop.expanded" class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#524D49"><path d="M460-460H240v-40h220v-220h40v220h220v40H500v220h-40v-220Z"/></svg></span>
+          </div>
+          <ul [ngClass]="{'expanded': shop.expanded, 'collapsed': !shop.expanded}">
+            <ng-container *ngFor="let s of shop.shops; trackBy: trackBy.trackByFn">
+              <li>
+                <span class='name'>{{ s.name }}</span>
+                <div class='address-info'>
+                  <span>{{ s.line_address_1 }}, </span>
+                  <span>{{ s.line_address_2 }}, </span>
+                  <span>{{ s.line_address_3 }}, </span>
+                  <span>{{ s.postcode }}</span>
+                  <span class="tel"><a [href]="'tel:'+s.telephone">Tel: {{s.telephone}}</a></span>
+                </div>
+                <span class="view-more"><a href="https://www.wed2b.com/{{ s.url_key }}" target="_blank">View Store</a></span>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</main>

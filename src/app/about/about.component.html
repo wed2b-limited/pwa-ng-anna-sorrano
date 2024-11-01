@@ -1,0 +1,21 @@
+<main class="about">
+  <div class="content">
+    <div class="wrapper">
+      <div>
+        <img *ngIf="isMobile" class="img-1 img-mobile" [src]="this.cdnUrl+'brands/heidi-hudson/media/about-image-1.jpg'" alt="Image One">
+        <h1>
+          <span class="first heading">carefree</span><br>
+          <span class="second heading">& understated</span>
+        </h1>
+        <p class="description">Heidi Hudson designs bohemian wedding dresses, channelling the beauty of nature and botanical into her designs. Heidi captures the essence of traditional bridal through quality construction techniques and modern design features, whilst influenced by the wilderness to create perfectly balanced gowns for easy-going, destination brides.</p>
+        <img *ngIf="isMobile" class="img-2 img-mobile" [src]="this.cdnUrl+'brands/heidi-hudson/media/about-image-2.jpg'" alt="Image Two">
+      </div>
+      <div class="images-container" *ngIf="!isMobile">
+        <img class="img-1" [src]="this.cdnUrl+'brands/heidi-hudson/media/about-image-1.jpg'" alt="Image One">
+        <div class="img-2-container">
+        <img class="img-2" [src]="this.cdnUrl+'brands/heidi-hudson/media/about-image-2.jpg'" alt="Image Two">
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

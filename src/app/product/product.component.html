@@ -1,0 +1,62 @@
+<app-progress-loader></app-progress-loader>
+<main class="product">
+  <div class="content" *ngIf="this.product">
+    <div class="wrapper" appTrackBy="id" #trackBy="appTrackBy">
+      <ng-container *ngFor="let prod of product | async; let i=index; trackBy: trackBy.trackByFn">
+        <div class="media-container">
+          <div class="description-container">
+            <h1 *ngIf="isMobile">{{prod.name}}</h1>
+          </div>
+          <ng-container *ngIf="hasProductVideo; else showFallbackImage">
+            <ng-container *ngFor="let image of prod.media_gallery">
+              <div class="video" *ngIf="image.__typename ==='ProductVideo'">
+                <ng-container *ngFor="let option of brandCollectionOptions">
+                  <img [src]="this.cdnUrl+'brands/heidi-hudson/media/'+formatUrl(option.label)+'/logo.png'">
+                </ng-container>
+                <video height="auto" [muted]="'muted'" muted loop autoplay [poster]="image.video_content.video_url" playsinline>
+                  <source [src]="image.video_content.video_url" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </ng-container>
+          </ng-container>
+          <ng-template #showFallbackImage>
+            <div class="fallback-image">
+              <ng-container *ngFor="let option of brandCollectionOptions">
+                <img class="logo" [src]="this.cdnUrl+'brands/heidi-hudson/media/'+formatUrl(option.label)+'/logo.png'">
+              </ng-container>
+              <img class="default" [src]="prod.image.url"  alt="Default Image">
+            </div>
+          </ng-template>
+          <div class="image-slider">
+            <ngx-glide #ngxGlide [gap]="30" [showArrows]="true" [arrowLeftLabel]="''" [arrowRightLabel]="''" [perView]="sliderPerView" [type]="'carousel'">
+              <ng-container *ngFor="let image of prod.media_gallery">
+                <span *ngIf="image.__typename !=='ProductVideo'"><img style="margin: 0 auto;width: -webkit-fill-available;vertical-align: middle" [alt]="image.label" [src]="image.url" /></span>
+              </ng-container>
+            </ngx-glide>
+          </div>
+        </div>
+        <div class="description-container">
+          <div class="sticky">
+              <h1 *ngIf="!isMobile">{{prod.name}}</h1>
+              <p>{{prod.description.html}}</p>
+              <a [routerLink]="['/', 'stockists']">find a store</a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="collection-wrapper">
+      <h2>Be inspired<br><span>by the collection</span></h2>
+      <div class="container" appTrackBy="id" #trackBy="appTrackBy">
+          <ng-container *ngFor="let item of collection | async; let i=index; trackBy: trackBy.trackByFn">
+            <div class="items">
+              <a [routerLink]="['/', item.url_key]">
+                <span class="product-name">{{ item.name }}</span>
+                <img [src]="item.image.url">
+              </a>
+            </div>
+          </ng-container>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,64 @@
+.instagram-feed {
+  margin: 0 -40px;
+  background: #EDE9E5;
+}
+.instagram-feed .content {
+  padding: 0 0 100px;
+}
+.content h2 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.25em;
+  text-align: center;
+  text-transform: initial;
+  margin-bottom: 30px;
+  @media screen and (min-width: 768px) {
+    line-height: 35px;
+  }
+}
+.instagram-feed .heading {
+  color: #000;
+  text-align: center;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 5px;
+  margin-bottom: 0;
+  margin-top: 1.5em;
+}
+.content h2 i {
+  font-style: normal;
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+  }
+}
+.instagram-media-container {
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: auto;
+  }
+}
+.instagram-media-container a {
+  display: contents;
+}
+.instagram-media-container img, .instagram-media-container video {
+  @media screen and (min-width: 768px) {
+    width: calc(25% - 10px);
+    margin-bottom: 0;
+    height: 300px;
+  }
+  height: 410px;
+  width: calc(80% - 10px);
+  margin-bottom: 20px;
+  object-fit: cover;
+}

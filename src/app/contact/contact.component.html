@@ -1,0 +1,13 @@
+<main class="contact">
+  <div class="content">
+    <div class="banner">
+      <img *ngIf="!isMobile" [src]="this.cdnUrl+'brands/heidi-hudson/media/contact-'+this.device+'-banner.jpg'" alt="Contact Banner">
+      <img *ngIf="isMobile" [src]="this.cdnUrl+'brands/heidi-hudson/media/contact-'+this.device+'-banner.jpg'" alt="Contact Banner">
+    </div>
+    <section class="section">
+      <h1>Contact</h1>
+      <p class="caption">Find your vibe exclusively at wed2b stores.</p>
+      <a class="call-to-action" href="https://www.wed2b.com/contact" target="_blank">Contact Wed2b</a>
+    </section>
+  </div>
+</main>

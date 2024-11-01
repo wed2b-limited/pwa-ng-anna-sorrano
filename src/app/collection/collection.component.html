@@ -1,0 +1,50 @@
+<app-progress-loader></app-progress-loader>
+<main class="collection">
+  <div class="content">
+    <div class="banner" *ngIf="bannerDirPath">
+      <div>
+        <img [src]="this.cdnUrl+'brands/heidi-hudson/media/'+bannerDirPath+'/collection-'+this.device+'-banner.jpg'" alt="">
+        <div [class]="'image-wrapper-logo '+bannerDirPath">
+          <img [src]="this.cdnUrl+'brands/heidi-hudson/media/'+bannerDirPath+'/logo.svg'" alt="">
+        </div>
+      </div>
+      <div [class]="'section '+bannerDirPath">
+        <p [class]="'description'">{{brandDescription}}</p>
+      </div>
+    </div>
+    <div class="catalog" *ngIf="collection" appTrackBy="id" #trackBy="appTrackBy">
+      <ng-container *ngFor="let product of collection | async; let i=index; trackBy: trackBy.trackByFn">
+        <ng-container *ngIf="i === 2">
+          <div class="feature-video-container">
+            <video [muted]="'muted'" muted loop autoplay [poster]="this.cdnUrl+'brands/heidi-hudson/media/'+bannerDirPath+'/collection-page-'+this.device+'-video.mp4'" playsinline>
+            <source [src]="this.cdnUrl+'brands/heidi-hudson/media/'+bannerDirPath+'/collection-page-'+this.device+'-video.mp4'" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+          </div>
+        </ng-container>
+        <a [routerLink]="['/', product.url_key]">
+          <span [class]="'product-name index-' + + (i % 5 + 1)">{{ product.name }}</span>
+          <div [class]="'product-container-' + (i % 5 + 1)">
+            <ng-container *ngFor="let image of product.sorted_media; let idx=index; trackBy: trackBy.trackByFn">
+              <ng-container *ngIf="(i % 5 + 1) === 2">
+                <div *ngIf="idx===0" [class]="'column-'+idx">
+                  <img [src]="image.url" alt="Product Image">
+                </div>
+                <div *ngIf="idx===1" [class]="'column-'+idx">
+                  <img [src]="product.sorted_media[1].url" alt="Product Image">
+                  <img [src]="product.sorted_media[2].url" alt="Product Image">
+                </div>
+              </ng-container>
+              <ng-container *ngIf="(i % 5 + 1) !== 2">
+                <div [class]="'column-'+idx">
+                  <img [src]="image.url" alt="Product Image">
+                </div>
+              </ng-container>
+            </ng-container>
+          </div>
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</main>
+<app-browse [class.hasProduct]="(collection | async)?.length > 0"></app-browse>

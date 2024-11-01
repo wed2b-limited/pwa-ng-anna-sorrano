@@ -1,0 +1,146 @@
+/*
+======================================================
+  Header Styles
+======================================================
+*/
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 0.3s;
+  background-color: white;
+  z-index: 3;
+}
+.burger-menu-container {
+
+}
+.burger-menu {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  fill: #FFFFFF;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.navbar.open .content {
+  background: #FFFFFF;
+}
+.rect {
+  fill: #FFFFFF;
+  transition: all 0.3s ease;
+}
+.navbar.navbar-top .rect, .navbar.open .rect {
+  fill: #000000;
+}
+.burger-menu.open .rect1 {
+  transform: rotate(45deg) translate(9px, -10px);
+}
+.burger-menu.open .rect2 {
+  opacity: 0;
+}
+.burger-menu.open .rect3 {
+  transform: rotate(-45deg) translate(-37px, -8px)
+}
+.navbar-top {
+  border-bottom: 1px solid #dcdbdb;
+  box-shadow: 0 2px 7px 1px #00000024;
+}
+.nav-up {
+  top: -120px;
+}
+header nav ul.menu-list {
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  padding: 0;
+  top: 100%;
+  left: 0;
+  transform: translateX(-200px);
+  transition: transform 0.3s ease-in-out;
+  @media screen and (max-width: 768px) {
+    background: #fff;
+  }
+  @media screen and (min-width: 768px) {
+    transform: translateX(0);
+    display: flex;
+    gap: 60px;
+    right: auto;
+    position: relative;
+  }
+}
+ul.menu-list li {
+  padding: 10px 30px;
+  letter-spacing: 0.25em;
+}
+header nav ul.menu-list.show {
+  transform: translateX(0px); /* Slide into view from the right on show */
+}
+/*
+======================================================
+  Main Content Styles
+======================================================
+*/
+header .content {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  max-width: 100%;
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+  }
+}
+header .content svg {
+  width: 167px;
+  @media screen and (min-width: 768px) {
+    width: auto;
+  }
+}
+/*
+======================================================
+  Footer Styles
+======================================================
+*/
+footer {
+  background-color: #EDE9E5;
+  max-width: 100%;
+}
+footer .content {
+  border-top: 1px solid;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: initial;
+  }
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  padding: 82px 40px;
+}
+footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  gap: 20px;
+}
+
+footer .social-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+footer .social-wrapper a {
+  display: inline-flex;
+}
+
+
